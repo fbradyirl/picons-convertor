@@ -26,7 +26,12 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-    - name: Convert single picon
+    - name: Convert picons to png
       run: |
         python convert.py
-        ls -lh
+        ls -lh picons
+        git config user.name github-actions
+        git config user.email github-actions@github.com
+        git add picons
+        git commit -m "generated"
+        git push
