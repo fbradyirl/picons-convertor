@@ -20,6 +20,8 @@ for subdir, dirs, files in os.walk(source_dir):
     for file in files:
         raw_name = file.replace(".default.svg", "")
         raw_name = raw_name.replace(".default.png", "")
+        raw_name = raw_name.replace(".default.png", "")
+        raw_name = raw_name.split("-")[0]
         output_file = "{}/{}.png".format(output_dir, raw_name)
         if file.endswith("png"):
             log.debug("Already a png {}. saving to {}...".format(file, output_file))
