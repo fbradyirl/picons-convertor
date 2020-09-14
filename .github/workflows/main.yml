@@ -11,15 +11,15 @@ jobs:
         python-version: [3.7]
 
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-      with:
-        path: main
     - name: Checkout picons repo
       uses: actions/checkout@v2
       with:
         repository: reuab/picons-source
         path: picons-source
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        path: main
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v2
       with:
