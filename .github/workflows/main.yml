@@ -1,7 +1,10 @@
 name: Picon Covert
 
-on: [push]
-
+on:
+  push:
+  schedule:
+    - cron: '0 0 * * *' # Once per day at midnight
+           
 jobs:
   build:
 
